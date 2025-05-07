@@ -18,14 +18,16 @@ export const useNoteStore = () => {
         uniqueNotes[note.id] = note;
       }
 
-
       return Object.values(uniqueNotes);
-    })
+    });
   };
+
+  const getOne = (id:number) => notes.find((note) => note.id ==id);
 
 
   return {
     getAll: () => notes,
+    getOne,
     set,
   };
 }
