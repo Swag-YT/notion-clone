@@ -19,7 +19,7 @@ export const noteRepository = {
     if(error !=null) throw new Error(error.message);
     return data;
   },
-  async find(userId:string,parentDocumentId:number) {
+  async find(userId:string,parentDocumentId?:number) {
     const query = supabase.from('notes')
     .select()
     .eq('user_id',userId)
